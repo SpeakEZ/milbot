@@ -34,3 +34,9 @@ Then you can interact with hubot by typing `hubot help`.
 Take a look at the scripts in the `./scripts` folder for examples.
 Delete any scripts you think are silly.  Add whatever functionality you
 want hubot to have.
+
+### Deploying
+
+Deploying is currently manual until we get a permanant server, please let @geothird know when you 
+have an update and to restart milbot.
+
