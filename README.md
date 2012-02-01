@@ -36,6 +36,27 @@ Delete any scripts you think are silly.  Add whatever functionality you
 want hubot to have.
 
 ### Deploying
+## Heroku
+
+# Updating and deploying to heroku
+After commiting changes to the git repository you can then push to heroku master and this will reload
+milbot with your new changes/scripts etc.
+    
+    % git push heroku master
+
+# Heroku environment setup
+You need to add the environment variables so the hubot can connect to campfire.
+
+    % heroku config:add HUBOT_CAMPFIRE_TOKEN="8fd92b3435cb9623e36c355935ae59667c5228a9"
+    % heroku config:add HUBOT_CAMPFIRE_ROOMS="399260,470072"
+    % heroku config:add HUBOT_CAMPFIRE_ACCOUNT="mil1"
+    % heroku config:add HUBOT_MEMEGEN_USERNAME='milbot'
+    % heroku config:add HUBOT_MEMEGEN_PASSWORD='4$friday$'
+    % heroku config:add HUBOT_JENKINS_URL='http://git.middil.com:8080/'
+    % heroku config:add HUBOT_JENKINS_AUTH='middilman:0107602e6f89d2d853eae675effb935f'
+    % heroku config:add HUBOT_JENKINS_TOKEN='aechou2IEt5uu4ohdaeNee4x'
+    % heroku config:add HUBOT_JENKINS_JOB='QAspeakez1'
+    % heroku addons:add redistogo:nano
 
 Deploying is currently manual until we get a permanant server, please let @geothird know when you 
 have an update and to restart milbot.
