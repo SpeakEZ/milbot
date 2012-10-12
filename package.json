@@ -37,7 +37,7 @@
     "cheerio": "",
     "scribe-node" : "",
     "pypi": "",
-    "sprintf":"",
+    "sprintf":""
   },
 
   "engines": {
