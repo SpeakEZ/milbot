@@ -38,7 +38,6 @@
     "scribe-node" : "",
     "pypi": "",
     "sprintf":"",
-    "hashlib":""
   },
 
   "engines": {
