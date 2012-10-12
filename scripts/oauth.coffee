@@ -1,23 +1,28 @@
-# OAuth 1.0a & 2.0 Handlers
+# Description:
+#   This is a basic OAuth authentication bot which is meant to be used with
+#   other scripts to interact and get data via signed API requests. Script
+#   has a dependency to scribe-node library that fundamentally wraps OAuth
+#   routines to give simpler and maintainable development experience for coders.
 #
-# This is a basic OAuth authentication bot which is meant to be used with other scripts to interact and
-# get data via signed API requests. Script has a dependencity to scribe-node library that fundamentally
-# wraps OAuth routines to give simpler and maintainable development experience for coders.
+# Dependencies:
+#   "scribe-node": ">=0.0.24"
+# 
+# Configuration:
+#   None
 #
-# Usage:
-# get <api> authorization url - get a link to authorization place
-# set <api> verifier <verification_code> - set verification code and access token after first step
-# set <api> access token <code> - set access token manually, for OAuth 2.0 (Facebook) only
-# refresh <api> token - refresh access token if it expires, for OAuth 2.0 only
-# get <api> request token - retrieves request token public value
-# get <api> access token - retrieves access token public value
-# get <api> verifier - retrieves verification code
-# remove <api> authorization - clears tokens from memory if user is same who verified the last authorization
-#
-# Supported APIs / widgets by default: analytics, analytics2, twitter, facebook, linkedin
+# Commands:
+#   get <api> authorization url - get a link to authorization place
+#   set <api> verifier <verification_code> - set verification code and access token after first step
+#   set <api> access token <code> - set access token manually, for OAuth 2.0 (Facebook) only
+#   refresh <api> token - refresh access token if it expires, for OAuth 2.0 only
+#   get <api> request token - retrieves request token public value
+#   get <api> access token - retrieves access token public value
+#   get <api> verifier - retrieves verification code
+#   remove <api> authorization - clears tokens from memory if user is same who verified the last authorization
+# 
+# Author:
+#   mmstud
 
-# requires scribe-node module >= 0.0.24 which can be installed with: npm install scribe-node
-# or describing dependencity on package.json file
 scribe = require('scribe-node').load(['OAuth'])
 # set custom service configurations if not available from scribe OAuth widget.
 # see examples and instructions from the loaded module widget itself:
@@ -40,7 +45,7 @@ handle_verification = (robot, msg) ->
       # but note that someone can still overwrite authorization if wanted!
       robot.brain.data.oauth_user[api] = msg.message.user.reply_to
       message = "Verification done"
-    else
+    else 
       message = "Error on verification process. See logs for more details."
     msg.send message
   new scribe.OAuth(robot.brain.data, api, services).set_verification_code(msg.match[2], callback)

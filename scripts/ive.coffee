@@ -1,6 +1,6 @@
 # Description:
-#   To create something that'sâ¦ that's genuinely new,
-#   you have toâ¦ to start again.
+#   To create something that's… that's genuinely new,
+#   you have to… to start again.
 #
 # Dependencies:
 #   None
@@ -27,3 +27,4 @@ ives = [
 module.exports = (robot) ->
   robot.hear /(essential|elegant|efficient|experience|incredible|meticulous|unibody|from the ground up)/i, (msg) ->
     msg.send msg.random ives
+
